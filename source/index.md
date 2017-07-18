@@ -34,6 +34,7 @@ includes:
   - supply/recontact
   - demand/introduction
   - demand/surveys
+  - demand/sessions
   - demand/qualifications
   - demand/quotas
   - demand/exchange-templates
