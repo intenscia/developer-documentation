@@ -104,8 +104,11 @@ __Important Details:__
 
 - Quotas are distinguished by `SurveyQuotaID` property.
 - A respondent qualifies for a quota cell if they fit __all__ of the conditions of the qualifications.
-- __All__ quotas a respondent qualifies for __must__ be greater than 0 in order for them to qualify to enter the study. If a respondent fits into any quota which is has 0 completes remaining, the respondent will __term__.
 - The logical operator is “OR” within the same quota qualification (i.e. AGE 18 OR 19 OR 20), but AND between quota qualifications (AGE 18 OR 19 or 20 AND Male OR Female)
+- Quota Logic should check three aspects of the [Show Quotas](#get-show-quotas) call when deciding to send a respondent to a survey:
+  - Is the "SurveyStillLive" property showing "true"?
+  - Is the "NumberOfRespondents" property showing a value greater than zero for __all__ SurveyQuotaIds that a respondent falls into. (Note: A respondent may fall into more than one quota.  For example, there may be quotas for gender and quotas for age, in which case a respondent may fall into two quotas, both of which must be open, for the respondent to pass.)
+  - Is the "NumberOfRespondents" property showing a value greater than zero for the "SurveyQuotaId" with a "SurveyQuotaType" value of "Total". (Essentially, if that "Total" quota is closed any respondent will result in an overquota, regardless of what other quotas may still be open. )
 
 ### Phase 2 - Getting the Offerwall, Qualifications, and Quotas
 
