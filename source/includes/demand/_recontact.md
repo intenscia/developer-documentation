@@ -329,4 +329,4 @@ Updates the list of PIDs that qualify for a recontact survey.
 | SurveyNumber                 | int      | true     | Unique number associated with the survey.                                                                                                    |
 | SupplierCode                 | string   | true     | Unique code associated with a supplier account.                                                                                              |
 | IsActive                     | boolean  | true     | Should the respondent still qualify?                                                                                                         |
-| PID                          | int      | true     | Persistent panelist identifier used by the supplier.                                                                                         |
+| PID                          | string   | true     | Persistent panelist identifier used by the supplier.                                                                                         |
