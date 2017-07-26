@@ -380,7 +380,7 @@ Creates a Fulcrum survey.
 
 | Property                     | Type     | Required | Description                                                                                                                                            |
 |------------------------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AccountID                    | int      | false     |Unique account identifier.                                                                                                                              |
+| AccountID                    | int      | false    |Unique account identifier.                                                                                                                              |
 | SurveyStatusCode             | int      | false    |Code associated with the current status of the survey. See [List Global Definitions](#get-list-global-definitions) for a map of survey status codes.        |
 | SurveyPriority               | int      | false    |Survey priority from 1-11 (1 being the highest). Priority only applies to routed sample.                                                                |
 | SurveyName                   | string   | true     |External name of the survey. This name may be exposed to respondents. This value is not unique across surveys.                                          |
@@ -390,7 +390,7 @@ Creates a Fulcrum survey.
 | ClientCPI                    | double   | false    |Revenue per complete used to calculate internal margin or savings.                                                                                      |
 | QuotaCPI                     | double   | false    |Gross payout per complete. This value is before any applicable commissions or fees.                                                                     |
 | ClientSurveyLiveURL          | string   | true     |Link to client survey. Max URL length for Fulcrum is 2000 characters.                                                                                   |
-| TestRedirectURL              | string   | true     |Link to client survey for testing purposes. All studies should include a working test link.                                                             |
+| TestRedirectURL              | string   | false    |Link to client survey for testing purposes. All studies should include a working test link.                                                             |
 | IsActive                     | string   | false    |Indicates if a survey is active or inactive. Inactive is effectively the same as delete. We recommend keeping any surveys that have prescreens or completes in active status.                                                                                                             |
 | Quota                        | int      | false    |Total number of completes needed.                                                                                                                        |
 | FulcrumExchangeAllocation    | double   | false    |Percentage of total completes allocated only to the Exchange. Must be between 0 and 100%.                                                               |
@@ -407,7 +407,7 @@ Creates a Fulcrum survey.
 | QuotaCalculationTypeID       | int      | false    |Sets the quota calculation method. Either 1 for ”Completes” (quotas determined by completes) or 2=”Prescreens” (quotas determined when leaving Fulcrum). |
 | SurveyPlatformID             | int      | false    |Sets the external platform ID. We recommend setting to 2 for "undefined" in most situations.                                                             |
 | BidLengthOfInterview         | int      | false    |Estimated time for a respondent to complete the survey excluding the Fulcrum prescreener in minutes as provided by the buyer.                           |
-| BusinessUnitID               | int      | true     |Sets the account [business unit](#get-list-business-units).                                                                                                 |
+| BusinessUnitID               | int      | false    |Sets the account [business unit](#get-list-business-units).                                                                                                 |
 | SampleTypeID                 | int      | false    |Sets the type of sample the survey is open to (i.e. consumer, business-to-business, etc). [See Sample Types](#definitions).                                 |
 | BidIncidence                 | int      | false    |Estimated incidence rate for the survey.                                                                                                                |
 | CollectsPII                  | boolean  | false    |`true` indicates that the survey will collect PII.                                                                                                      |
@@ -753,7 +753,7 @@ Update an existing Fulcrum survey.
 
 | Property                     | Type     | Required | Description                                                                                                                                            |
 |------------------------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AccountID                    | int      | false     |Unique account identifier.                                                                                                                              |
+| AccountID                    | int      | false    |Unique account identifier.                                                                                                                              |
 | SurveyStatusCode             | int      | true     |Code associated with the current status of the survey. See [List Global Definitions](#get-list-global-definitions) for a map of survey status codes.        |
 | SurveyPriority               | int      | true     |Survey priority from 1-11 (1 being the highest). Priority only applies to routed sample.                                                                |
 | SurveyName                   | string   | true     |External name of the survey. This name may be exposed to respondents. This value is not unique across surveys.                                          |
