@@ -176,7 +176,7 @@ request.end();
 
 Creates a group with specific suppliers and allocation for that group.
 
-<aside class="notice"> There are edge cases where suppliers overfilling their allocation can prevent a study with 100% allocation from finsihing. In this case, some compeltes will be mathematically unattainable. To remedy, let a small percentage of completes go unallocated and allow hedge access. </aside>
+<aside class="notice"> There are edge cases where suppliers overfilling their allocation can prevent a study with 100% allocation from finishing. In this case, some completes will be mathematically unattainable. To remedy, let a small percentage of completes go unallocated and allow hedge access. </aside>
 
 
 #### Arguments
