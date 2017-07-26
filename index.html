@@ -4539,7 +4539,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <blockquote>
 <p>Example Request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Authorization: YOUR_API_KEY_HERE"</span> -X POST --data <span class="s1">'{"AccountID": 1,"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 1000,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"BidIncidence": 20,"CollectsPII": null}'</span> https://api.samplicio.us/Demand/v1/Surveys/Create
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Authorization: YOUR_API_KEY_HERE"</span> -X POST --data <span class="s1">'{"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 1000,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"BidIncidence": 20,"CollectsPII": null}'</span> https://api.samplicio.us/Demand/v1/Surveys/Create
 </code></pre>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
@@ -4555,7 +4555,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">fullUriPath</span><span class="p">,</span> <span class="n">initheader</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span><span class="s1">'application/json'</span><span class="p">})</span>
 
 <span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"AccountID"</span><span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"SurveyStatusCode"</span><span class="o">=&gt;</span> <span class="s2">"01"</span><span class="p">,</span>
     <span class="s2">"SurveyPriority"</span><span class="o">=&gt;</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s2">"SurveyName"</span><span class="o">=&gt;</span> <span class="s2">"Example API Survey"</span><span class="p">,</span>
@@ -4596,7 +4595,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nv">$params</span> <span class="o">=</span> <span class="s1">'{
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyName": "Example API Survey",
@@ -4651,7 +4649,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 
 <span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.samplicio.us/Demand/v1/Surveys/Create'</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"AccountID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s">"SurveyStatusCode"</span><span class="p">:</span> <span class="s">"01"</span><span class="p">,</span>
     <span class="s">"SurveyPriority"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s">"SurveyName"</span><span class="p">:</span> <span class="s">"Example API Survey"</span><span class="p">,</span>
@@ -4694,8 +4691,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="n">WebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">WebRequest</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"https://api.samplicio.us/Demand/v1/Surveys/Create"</span><span class="p">);</span>
 
 <span class="kt">string</span> <span class="n">args</span> <span class="p">=</span> <span class="err">@</span><span class="s">"{
-</span>                    <span class="s">""</span><span class="n">AccountID</span><span class="s">""</span><span class="p">:</span> <span class="m">1</span><span class="p">,</span>
-                    <span class="s">""</span><span class="n">SurveyStatusCode</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="m">01</span><span class="s">""</span><span class="p">,</span>
+</span>                    <span class="s">""</span><span class="n">SurveyStatusCode</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="m">01</span><span class="s">""</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">SurveyPriority</span><span class="s">""</span><span class="p">:</span> <span class="m">11</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">SurveyName</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="n">Example</span> <span class="n">API</span> <span class="n">Survey</span><span class="s">""</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">CountryLanguageID</span><span class="s">""</span><span class="p">:</span> <span class="m">9</span><span class="p">,</span>
@@ -4752,7 +4748,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"AccountID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"SurveyStatusCode"</span><span class="p">:</span> <span class="s2">"01"</span><span class="p">,</span>
     <span class="s2">"SurveyPriority"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s2">"SurveyName"</span><span class="p">:</span> <span class="s2">"Example API Survey"</span><span class="p">,</span>
@@ -4856,7 +4851,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 
 <p>Creates a Fulcrum survey.   </p>
 
-<aside class="notice">Fulcrum automatically adds 7 qualifications to US studies when a survey is created (Age, Gender, Zip, STATE, Ethnicity, Hispanic, Standard HHI). These qualifications can be edited or removed if desired by <a href="#put-update-a-qualification">updating the qualification</a></aside>
+<aside class="notice">Fulcrum automatically adds 6 qualifications to US studies when a survey is created (Age, Gender, Zip, Ethnicity, Hispanic, Standard HHI). These qualifications can be edited or removed if desired by <a href="#put-update-a-qualification">updating the qualification</a></aside>
 
 <h4 id="arguments">Arguments</h4>
 
@@ -4871,7 +4866,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <tr>
 <td>AccountID</td>
 <td>int</td>
-<td>true</td>
+<td>false</td>
 <td>Unique account identifier.</td>
 </tr>
 <tr>
@@ -4931,7 +4926,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <tr>
 <td>TestRedirectURL</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>Link to client survey for testing purposes. All studies should include a working test link.</td>
 </tr>
 <tr>
@@ -5033,7 +5028,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <tr>
 <td>BusinessUnitID</td>
 <td>int</td>
-<td>true</td>
+<td>false</td>
 <td>Sets the account <a href="#get-list-business-units">business unit</a>.</td>
 </tr>
 <tr>
@@ -5067,7 +5062,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <blockquote>
 <p>Example Request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Authorization: YOUR_API_KEY_HERE"</span> -X PUT --data <span class="s1">'{"AccountID": 1,"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyNumber": 12345,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 100,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"CollectsPII": null}'</span> https://api.samplicio.us/Demand/v1/Surveys/Update/<span class="o">{</span>SurveyNumber<span class="o">}</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Authorization: YOUR_API_KEY_HERE"</span> -X PUT --data <span class="s1">'{"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyNumber": 12345,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 100,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"CollectsPII": null}'</span> https://api.samplicio.us/Demand/v1/Surveys/Update/<span class="o">{</span>SurveyNumber<span class="o">}</span>
 </code></pre>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
@@ -5083,7 +5078,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Put</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">fullUriPath</span><span class="p">,</span> <span class="n">initheader</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span><span class="s1">'application/json'</span><span class="p">})</span>
 
 <span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="no">AccountID</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="no">SurveyStatusCode</span><span class="p">:</span> <span class="s2">"01"</span><span class="p">,</span>
     <span class="no">SurveyPriority</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="no">SurveyNumber</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
@@ -5125,7 +5119,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nv">$params</span> <span class="o">=</span> <span class="s1">'{
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyNumber": 12345,
@@ -5181,7 +5174,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 
 <span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}'</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"AccountID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s">"SurveyStatusCode"</span><span class="p">:</span> <span class="s">"01"</span><span class="p">,</span>
     <span class="s">"SurveyPriority"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s">"SurveyNumber"</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
@@ -5225,8 +5217,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="n">WebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">WebRequest</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}"</span><span class="p">);</span>
 
 <span class="kt">string</span> <span class="n">args</span> <span class="p">=</span> <span class="err">@</span><span class="s">"{
-</span>                    <span class="s">""</span><span class="n">AccountID</span><span class="s">""</span><span class="p">:</span> <span class="m">1</span><span class="p">,</span>
-                    <span class="s">""</span><span class="n">SurveyStatusCode</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="m">01</span><span class="s">""</span><span class="p">,</span>
+</span>                    <span class="s">""</span><span class="n">SurveyStatusCode</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="m">01</span><span class="s">""</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">SurveyPriority</span><span class="s">""</span><span class="p">:</span> <span class="m">11</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">SurveyNumber</span><span class="s">""</span><span class="p">:</span> <span class="m">12345</span><span class="p">,</span>
                     <span class="s">""</span><span class="n">SurveyName</span><span class="s">""</span><span class="p">:</span> <span class="s">""</span><span class="n">Example</span> <span class="n">API</span> <span class="n">Survey</span><span class="s">""</span><span class="p">,</span>
@@ -5284,7 +5275,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"AccountID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"SurveyStatusCode"</span><span class="p">:</span> <span class="s2">"01"</span><span class="p">,</span>
     <span class="s2">"SurveyPriority"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s2">"SurveyNumber"</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
@@ -5350,7 +5340,6 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
   </span><span class="p">],</span><span class="w">
   </span><span class="nt">"ResultCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"Survey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"AccountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"SurveyStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"SurveyPriority"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
     </span><span class="nt">"SurveyNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
@@ -5402,7 +5391,7 @@ While this call does return `QuotaCPI`, it is recommended that <a href="#get-sho
 <tr>
 <td>AccountID</td>
 <td>int</td>
-<td>true</td>
+<td>false</td>
 <td>Unique account identifier.</td>
 </tr>
 <tr>
