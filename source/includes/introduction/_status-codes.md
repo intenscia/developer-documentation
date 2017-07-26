@@ -10,6 +10,7 @@ Fulcrum uses conventional HTTP response codes to indicate the success or failure
 | 201			| Created					| The request has succeeded and a new resource has been created as a result of it. This is typically the response sent after a PUT request.			|
 | 202			| Accepted				| The request has succeeded and has been added to the queue, but the resource has not yet been created. This is typically the response sent after PUT and POST requests.			|
 | 204			| No Content				| There is no content to send for this request. This is common for DELETE requests.																	|
+| 307			| Temporary Redirect| The target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.|
 | 400			| Bad Request				| This response means that server could not understand the request due to invalid syntax.															|
 | 401			| Unauthorized				| Authentication is needed to get requested response. This is similar to 403, but in this case, authentication is possible.							|
 | 403			| Forbidden					| Client does not have access rights to the content so server is refusing to give proper response.													|
@@ -18,5 +19,6 @@ Fulcrum uses conventional HTTP response codes to indicate the success or failure
 | 409			| Conflict					| This response would be sent when a request conflicts with the current state of the server.																|
 | 429			| Too Many Requests	| The user has sent too many requests in a given amount of time ("rate limiting").																|
 | 500			| Internal Server Error 	| The server has encountered a situation it doesn't know how to handle.																				|
+| 502			| Bad Gateway 	| The server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.|
 | 503			| Service Unavailable		| The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.						|
 | 504			| Gateway Timeout			| This error response is given when the server is acting as a gateway and cannot get a response in time.											|
