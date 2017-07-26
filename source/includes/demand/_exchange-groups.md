@@ -184,7 +184,7 @@ Creates a group with specific suppliers and allocation for that group.
 |----------------------|---------|----------|-----------------------------------------------------------------|
 | SurveyNumber         | int     | true     | Unique number associated with the survey.                       |
 | Name                 | string  | true     | Supplier Group name.                                            |
-| AllocationPercentage | int     | tue      | Group reserved allocation, expressed as a decimal.              |
+| AllocationPercentage | double  | tue      | Group reserved allocation, expressed as a decimal.              |
 | IsHedgeAccess        | boolean | true     | Access to unallocated completes on the Exchange.                |
 | Suppliers            | array   | true     | An array of all supplier codes (strings).                       |
 | CPI                  | double  | false    | The payout per complete for the group (defaults to survey QCPI).|
@@ -359,7 +359,7 @@ Creates an empty supplier group with a specific allocation and name.
 |----------------------|---------|----------|-----------------------------------------------------------------|
 | SurveyNumber         | int     | true     | Unique number associated with the survey.                       |
 | Name                 | string  | true     | Supplier Group name.                                            |
-| AllocationPercentage | int     | true     | Group reserved allocation, expressed as a decimal.              |
+| AllocationPercentage | double     | true     | Group reserved allocation, expressed as a decimal.              |
 | IsHedgeAccess        | boolean | false    | Access to unallocated completes on the Exchange.                |
 |    CPI               | double  | false    | The payout per complete for the group (defaults to survey QCPI).|
 
@@ -536,7 +536,7 @@ Updates a supplier group with the specified values.
 | ID                   | int     | true     | Unique ID associated with the group.                             |
 | SurveyNumber         | int     | true     | Unique number associated with the survey.                        |
 | Name                 | string  | true     | Supplier Group name.                                             |
-| AllocationPercentage | int     | true     | Group reserved allocation, expressed as a decimal.               |
+| AllocationPercentage | double  | true     | Group reserved allocation, expressed as a decimal.               |
 | IsHedgeAccess        | boolean | true     | Access to unallocated completes on the Exchange.                 |
 | CPI                  | double  | false    | The payout per complete for the group (defaults to survey QCPI). |
 
