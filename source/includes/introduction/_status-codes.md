@@ -16,6 +16,7 @@ Fulcrum uses conventional HTTP response codes to indicate the success or failure
 | 404			| Not Found 				| Server cannot find the requested resource.																										|
 | 405			| Method Not Found 			| The request method is known by the server but has been disabled and cannot be used. Double check your method type (i.e. GET, POST, PUT, DELETE)	|
 | 409			| Conflict					| This response would be sent when a request conflicts with the current state of the server.																|
+| 429			| Too Many Requests	| The user has sent too many requests in a given amount of time ("rate limiting").																|
 | 500			| Internal Server Error 	| The server has encountered a situation it doesn't know how to handle.																				|
 | 503			| Service Unavailable		| The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.						|
 | 504			| Gateway Timeout			| This error response is given when the server is acting as a gateway and cannot get a response in time.											|
