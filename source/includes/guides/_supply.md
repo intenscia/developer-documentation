@@ -246,6 +246,8 @@ Panel Recruits and Community Builds are excellent revenue opportunities, however
 * 11 - Recruit - panel
 * 8  - Community Build
 
+We recommend using a PIXEL or S2S supplier postback as the `TrackingTypeCode` when [creating entry links](http://developer.lucidhq.com/#post-create-a-link) when the study type is Recruit – Panel or Community Build.
+
 #### 2. How do I know when a study is no longer live?
 
 It is important to check that respondents are not sent to a closed survey. There are two ways to implement a check for whether a survey is live:
