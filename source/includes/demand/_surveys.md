@@ -52,7 +52,7 @@ POST  https://api.samplicio.us/Demand/v1/Surveys/Create
 > Example Request
 
 ```shell
-curl -H "Content-Type: application/json" -H "Authorization: YOUR_API_KEY_HERE" -X POST --data '{"AccountID": 1,"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 1000,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"BidIncidence": 20,"CollectsPII": null}' https://api.samplicio.us/Demand/v1/Surveys/Create
+curl -H "Content-Type: application/json" -H "Authorization: YOUR_API_KEY_HERE" -X POST --data '{"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 1000,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"BidIncidence": 20,"CollectsPII": null}' https://api.samplicio.us/Demand/v1/Surveys/Create
 ```
 
 ```ruby
@@ -70,7 +70,6 @@ fullUriPath = uri.path + '?' + uri.query
 request = Net::HTTP::Post.new(fullUriPath, initheader = {'Content-Type' =>'application/json'})
 
 request.body = {
-    "AccountID"=> 1,
     "SurveyStatusCode"=> "01",
     "SurveyPriority"=> 11,
     "SurveyName"=> "Example API Survey",
@@ -113,7 +112,6 @@ response = http.request(request)
 $curl = curl_init();
 
 $params = '{
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyName": "Example API Survey",
@@ -170,7 +168,6 @@ import requests, json
 
 url = 'https://api.samplicio.us/Demand/v1/Surveys/Create'
 params = {
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyName": "Example API Survey",
@@ -215,7 +212,6 @@ using System.Net;
 WebRequest request = WebRequest.Create("https://api.samplicio.us/Demand/v1/Surveys/Create");
 
 string args = @"{
-                    ""AccountID"": 1,
                     ""SurveyStatusCode"": ""01"",
                     ""SurveyPriority"": 11,
                     ""SurveyName"": ""Example API Survey"",
@@ -275,7 +271,6 @@ var options = {
 };
 
 var json = {
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyName": "Example API Survey",
@@ -385,7 +380,7 @@ Creates a Fulcrum survey.
 
 | Property                     | Type     | Required | Description                                                                                                                                            |
 |------------------------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AccountID                    | int      | true     |Unique account identifier.                                                                                                                              |
+| AccountID                    | int      | false     |Unique account identifier.                                                                                                                              |
 | SurveyStatusCode             | int      | false    |Code associated with the current status of the survey. See [List Global Definitions](#get-list-global-definitions) for a map of survey status codes.        |
 | SurveyPriority               | int      | false    |Survey priority from 1-11 (1 being the highest). Priority only applies to routed sample.                                                                |
 | SurveyName                   | string   | true     |External name of the survey. This name may be exposed to respondents. This value is not unique across surveys.                                          |
@@ -428,7 +423,7 @@ PUT  https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}
 > Example Request
 
 ```shell
-curl -H "Content-Type: application/json" -H "Authorization: YOUR_API_KEY_HERE" -X PUT --data '{"AccountID": 1,"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyNumber": 12345,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 100,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"CollectsPII": null}' https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}
+curl -H "Content-Type: application/json" -H "Authorization: YOUR_API_KEY_HERE" -X PUT --data '{"SurveyStatusCode": "01","SurveyPriority": 11,"SurveyNumber": 12345,"SurveyName": "Example API Survey","CountryLanguageID": 9,"IndustryID": 30,"StudyTypeID": 1,"ClientCPI": 1,"QuotaCPI": 2,"ClientSurveyLiveURL": "https://www.surveyURL.com?rid=[%RID%]","TestRedirectURL": "https://www.surveyURL.com?rid=[%RID%]","IsActive": true,"Quota": 100,"FulcrumExchangeAllocation": 0,"FulcrumExchangeHedgeAccess": true,"IsVerifyCallBack": true,"UniquePID": true,"UniqueIPAddress": true,"IsRelevantID": false,"IsDedupe": false,"IsGeoIP": false,"IsFraudProfile": false,"FraudProfileThreshold": 0,"IsTrueSample": false,"QuotaCalculationTypeID": 1,"SurveyPlatformID": 2,"BidLengthOfInterview": 10,"BusinessUnitID": 9,"SampleTypeID": 100,"CollectsPII": null}' https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}
 ```
 
 ```ruby
@@ -446,7 +441,6 @@ fullUriPath = uri.path + '?' + uri.query
 request = Net::HTTP::Put.new(fullUriPath, initheader = {'Content-Type' =>'application/json'})
 
 request.body = {
-    AccountID: 1,
     SurveyStatusCode: "01",
     SurveyPriority: 11,
     SurveyNumber: 12345,
@@ -490,7 +484,6 @@ response = http.request(request)
 $curl = curl_init();
 
 $params = '{
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyNumber": 12345,
@@ -548,7 +541,6 @@ import requests, json
 
 url = 'https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}'
 params = {
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyNumber": 12345,
@@ -594,7 +586,6 @@ using System.Net;
 WebRequest request = WebRequest.Create("https://api.samplicio.us/Demand/v1/Surveys/Update/{SurveyNumber}");
 
 string args = @"{
-                    ""AccountID"": 1,
                     ""SurveyStatusCode"": ""01"",
                     ""SurveyPriority"": 11,
                     ""SurveyNumber"": 12345,
@@ -655,7 +646,6 @@ var options = {
 };
 
 var json = {
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyNumber": 12345,
@@ -721,7 +711,6 @@ request.end();
   ],
   "ResultCount": 1,
   "Survey": {
-    "AccountID": 1,
     "SurveyStatusCode": "01",
     "SurveyPriority": 11,
     "SurveyNumber": 12345,
@@ -764,7 +753,7 @@ Update an existing Fulcrum survey.
 
 | Property                     | Type     | Required | Description                                                                                                                                            |
 |------------------------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AccountID                    | int      | true     |Unique account identifier.                                                                                                                              |
+| AccountID                    | int      | false     |Unique account identifier.                                                                                                                              |
 | SurveyStatusCode             | int      | true     |Code associated with the current status of the survey. See [List Global Definitions](#get-list-global-definitions) for a map of survey status codes.        |
 | SurveyPriority               | int      | true     |Survey priority from 1-11 (1 being the highest). Priority only applies to routed sample.                                                                |
 | SurveyName                   | string   | true     |External name of the survey. This name may be exposed to respondents. This value is not unique across surveys.                                          |
