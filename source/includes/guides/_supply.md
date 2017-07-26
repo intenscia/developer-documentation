@@ -246,7 +246,7 @@ Panel Recruits and Community Builds are excellent revenue opportunities, however
 * 11 - Recruit - panel
 * 8  - Community Build
 
-We recommend using a PIXEL or S2S supplier postback as the `TrackingTypeCode` when [creating entry links](http://developer.lucidhq.com/#post-create-a-link) when the study type is Recruit – Panel or Community Build.
+We recommend using a PIXEL or S2S supplier postback as the `TrackingTypeCode` when [creating entry links](http://developer.lucidhq.com/#post-create-a-link) for Recruit – Panel or Community Build study types since the respondent often remains in the community or panel.
 
 #### 2. How do I know when a study is no longer live?
 
