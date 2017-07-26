@@ -9,7 +9,7 @@ The Exchange Templates resource returns all Exchange templates associated with a
 | ID                           | int     | ID associated with the Exchange Template.                                                                     |
 | AccountID                    | int     | Unique account identifier.                                                                                    |
 | Name                         | string  | Exchange Template Name.                                                                                       |
-| ExchangeAllocationPercentage | int     | Percentage of total completes allocated only to the Exchange. Must be between 0 and 100%.                     |
+| ExchangeAllocationPercentage | double     | Percentage of total completes allocated only to the Exchange. Must be between 0 and 100%.                     |
 | ExchangeIsHedgeAccess        | boolean | `true` gives the Exchange access to any unallocated completes. `true` is recommended when using the Exchange. |
 | IsGlobalTemplate             | boolean | Should always return `false` indicating the template is only available to the buyers account.                 |
 
@@ -22,7 +22,7 @@ The Exchange Templates resource returns all Exchange templates associated with a
 | SupplierGroupDisplayTypeID | int     | Indicates if the group is the "blocked" group or not. 1 = unblocked. 2 = blocked.               |
 | Completes                  | int     | Number of completes gained by the group.                                                        |
 | Screens                    | int     | Number of prescreens gained by the group.                                                       |
-| AllocationPercentage       | int     | Percentage of total completes allocated only to the Exchange group. Must be between 0 and 100%. |
+| AllocationPercentage       | double  | Percentage of total completes allocated only to the Exchange group. Must be between 0 and 100%. |
 | IsHedgeAccess              | boolean | `true` gives the Exchange group access to any unallocated completes.                            |
 | CPI                        | int     | Will return `null` as CPI can't be set via an Exchange Template.                                |
 | Suppliers                  | array   | Contains array of elements described below.                                                     |
